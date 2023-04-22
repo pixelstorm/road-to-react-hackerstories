@@ -33,13 +33,16 @@ const list = [
 ];
   return (
       <div>
-
-
       {list.map(function (item) {
-          return <li key={item.objectID}>{item.title}</li>;
+          return (
+               <li key={item.objectID}>{item.title}
+                <span><a href="{item.url}">{item.title}</a></span>
+                <span>{item.author}</span>
+                <span>{ item.num_comments }</span>
+                <span>{item.points}</span>
+             </li>
+          );
         })}
-
-
         <h1>{welcome.greeting} {welcome.title}</h1>
         <label htmlFor="search">Search:</label>
         <input type="text" id="search"/>
