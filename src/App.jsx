@@ -3,9 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+
 const welcome = {
-   greeting: 'hey',
-   title: 'reactive'
+   greeting: 'Hey',
+   title: 'Reactive'
 }
 
 const list = [
@@ -27,7 +28,7 @@ const list = [
 },
 ];
 
-function App() {
+const App = () => {
    return (
       <div>
       <Greeting/>
@@ -36,15 +37,15 @@ function App() {
       </div>
    )
 }
-function Greeting() {
-   return (
-      <div><h1>{welcome.greeting}{welcome.title}</h1></div>
+
+
+const Greeting = () => {
+   return(
+      <div><h1>{welcome.greeting} {welcome.title}</h1></div>
    )
-
-
 }
 
-function List() {
+const List = () => {
    return (
       <ul>
       {list.map(function (item) {
@@ -61,16 +62,18 @@ function List() {
    )
 }
 
-function Search() {
+const Search = () => {
+
+   const handleChange = (event) => {
+      console.log(event);
+      console.log(event.target.value);
+   }
    return(
       <div>
       <label htmlFor="search">Search:</label>
-      <input type="text" id="search"/>
+      <input type="text" onChange={handleChange} id="search"/>
       </div>
    ) 
-
-   
-
-
 }
+
 export default App
