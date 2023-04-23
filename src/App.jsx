@@ -4,14 +4,9 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 
-const welcome = {
-   greeting: 'Hey',
-   title: 'Reactive'
-}
 
 
 const App = () => {
-
 
 
 const stories = [
@@ -33,10 +28,15 @@ const stories = [
 },
 ];
 
+const welcome = {
+   greeting: 'Hey from props',
+   title: 'Reactive from props'
+}
+
 
    return (
       <div>
-      <Greeting/>
+      <Greeting greeting={welcome}/>
       <List list={stories} />
       <Search/>
       </div>
@@ -44,9 +44,9 @@ const stories = [
 }
 
 
-const Greeting = () => {
+const Greeting = (props) => {
    return(
-      <div><h1>{welcome.greeting} {welcome.title}</h1></div>
+      <div><h1>{props.greeting.greeting} {props.greeting.title}</h1></div>
    )
 }
 
