@@ -9,7 +9,12 @@ const welcome = {
    title: 'Reactive'
 }
 
-const list = [
+
+const App = () => {
+
+
+
+const stories = [
    {
    title: 'React',
    url: 'https://reactjs.org/',
@@ -28,11 +33,11 @@ const list = [
 },
 ];
 
-const App = () => {
+
    return (
       <div>
       <Greeting/>
-      <List />
+      <List list={stories} />
       <Search/>
       </div>
    )
@@ -45,10 +50,10 @@ const Greeting = () => {
    )
 }
 
-const List = () => {
+const List = (props) => {
    return (
       <ul>
-      {list.map(function (item) {
+      {props.list.map(function (item) {
           return (
                <li key={item.objectID}>{item.title}
                 <span><a href="{item.url}">{item.title}</a></span>
